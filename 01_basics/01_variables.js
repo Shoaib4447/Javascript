@@ -15,5 +15,11 @@ accountEmail = 'Email Changed'
 accoundPassword = '12123'
 accountCity = 'City Changed Lahore Islamabad'
 
+/**
+ Prefer Not to Var
+ because of issue in Block Scope and Functional Scope
+ */
+
+// Use table() method for output if you have multiple variables
 console.table([accoundId, accoundPassword, accountEmail, accountCity,accoundState])
 
