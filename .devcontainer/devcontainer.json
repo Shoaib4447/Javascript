@@ -1,6 +1,24 @@
 {
 	"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {}
+		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {},
+		// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"vscode-icons-team.vscode-icons",
+				"wayou.vscode-todo-highlight"
+			],
+			"settings": {
+				"editor.fontSize": 32,
+				"terminal.integrated.fontSize": 24,
+				"editor.wordWrap": "on"
+			}
+			
+		}
+		
+	 }
 	}
+	
 }
