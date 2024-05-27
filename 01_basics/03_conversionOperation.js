@@ -4,11 +4,11 @@
 // let score = null  // Null value (4)statement
 // let score = undefined  // undefined (5)statement
 // let score = true  // Boolean (6)statement
-// let score = "Shoaib"  //String not convert able to number (7)statement
+let score = "Shoaib"  //String not convert able to number (7)statement
 
 
 // Checking type of the score
-// console.log(typeof score)
+console.log(typeof score)
 
 
 /*
@@ -16,10 +16,10 @@
 */
 
 // Convert String to Number
-// let valueInNumber = Number(score) //Now check type of score
-// console.log(typeof valueInNumber) // TYpe is number but what is in the value
+let valueInNumber = Number(score) //Now check type of score
+console.log(typeof valueInNumber) // TYpe is number but what is in the value
 // Lets check out 
-// console.log(valueInNumber) // It will give ? (7)statement
+console.log(valueInNumber) // It will give ? (7)statement
 // Value in the valueInNumber is NaN : Which is not a number
 
 /*
@@ -39,11 +39,11 @@
 
 // let isLoggedIn = 1 //true
 // let isLoggedIn = "" //false
-// let isLoggedIn = "shoaib" //true
+let isLoggedIn = "shoaib" //true
 
-// let isLoggedInNumber = Boolean(isLoggedIn)
-// console.log("Value is : ",isLoggedInNumber) // true
-// console.log("Type is : ",typeof isLoggedIn)
+let isLoggedInNumber = Boolean(isLoggedIn)
+console.log("Value is : ",isLoggedInNumber) // true
+console.log("Type is : ",typeof isLoggedIn)
 
 /**
  * ! Conversion from types to boolean
