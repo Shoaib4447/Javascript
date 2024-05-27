@@ -8,7 +8,7 @@ let score = "Shoaib"  //String not convert able to number (7)statement
 
 
 // Checking type of the score
-console.log(typeof score)
+// console.log(typeof score)
 
 
 /*
@@ -17,9 +17,9 @@ console.log(typeof score)
 
 // Convert String to Number
 let valueInNumber = Number(score) //Now check type of score
-console.log(typeof valueInNumber) // TYpe is number but what is in the value
+// console.log(typeof valueInNumber) // TYpe is number but what is in the value
 // Lets check out 
-console.log(valueInNumber) // It will give ? (7)statement
+// console.log(valueInNumber) // It will give ? (7)statement
 // Value in the valueInNumber is NaN : Which is not a number
 
 /*
@@ -42,8 +42,8 @@ console.log(valueInNumber) // It will give ? (7)statement
 let isLoggedIn = "shoaib" //true
 
 let isLoggedInNumber = Boolean(isLoggedIn)
-console.log("Value is : ",isLoggedInNumber) // true
-console.log("Type is : ",typeof isLoggedIn)
+// console.log("Value is : ",isLoggedInNumber) // true
+// console.log("Type is : ",typeof isLoggedIn)
 
 /**
  * ! Conversion from types to boolean
@@ -58,5 +58,88 @@ console.log("Type is : ",typeof isLoggedIn)
 
 let someNumber = 2
 let stringNumber = String(someNumber)
-console.log("Value is : ",stringNumber) // "33"
-console.log("Type is : ",typeof stringNumber) // string
+// console.log("Value is : ",stringNumber) // "33"
+// console.log("Type is : ",typeof stringNumber) // string
+
+/*
+ *              ******************* OPERATIONS *************************
+*/
+
+let value = 3
+let negValue = -value
+// console.log("Value is: ",negValue)
+
+/*
+!  ARITHMETIC OPERATIONS 
+* 1. Addition: a + b
+* 2. Subtraction: a - b
+* 3. Multiplication: a * b
+* 4. Division: a / b
+* 5. Modulus: a % b
+* 6. Exponentiation: a ** b
+*/
+
+// Concatenating Strings
+let str1 = "Shoaib"
+let str2 = "Bhatti"
+let fullName = str1 + " " + str2
+// console.log("Full Name is: ",fullName)
+
+/*
+! Problem while concatenation String and number 
+? Observe: Before and After conversion
+* lets have some examples
+ */
+let data = '1' + 2
+let data2 =  2 + '1'
+let data3 = '2' + 2 + 3
+let data4 =  2 + 3 + '2' 
+// These cases or not used in real life example but these was just for understanding purpose
+let data5 =  2 + (3 + '2')
+let data6 =  2 + (3 + 2)
+// let data7 =  2 + (ture + 2) // Error
+
+
+// console.log("String + number: ",data , 'type of data: ', typeof data)
+// console.log("number + String: ",data2 , 'type of data: ', typeof data2)
+// // What if 
+// console.log("String + Numbers : ",data3 , 'type of data: ', typeof data3)
+// console.log("Numbers + String: ",data4 , 'type of data: ', typeof data4)
+// console.log("Numbers + String: ",data5 , 'type of data: ', typeof data5)
+// console.log("Numbers + String: ",data6 , 'type of data: ', typeof data6)
+// console.log("Numbers + String: ",data7 , 'type of data: ', typeof data7)
+
+
+/*
+! Tricky Conversions 
+* just for understanding purpose not usable in real life
+* Prefix and Postfix
+ */
+
+// console.log(+true)
+// console.log(+"")
+
+let num1,num2,num3
+num1 = num2 = num3 = 2 + 3
+// console.table([num1, num2, num3])
+
+
+// Prefix vs Postfix 
+let gameCounter = 100
+// gameCounter++ // postfix
+++gameCounter // prefix
+// console.log(gameCounter)
+
+let x = 3;
+const y = x++;
+
+console.log(`x:${x}, y:${y}`);
+
+let a = 3;
+const b = ++a;
+
+console.log(`a:${a}, b:${b}`);
+
+
+
+
