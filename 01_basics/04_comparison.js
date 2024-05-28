@@ -8,7 +8,7 @@
 
 /*
 * Problem is that when don't compare same datatypes and avoid these cases or comparisons
-? When we compare two datatypes make sure that datatypes are same otherwise  it will give 
+? When we compare two datatypes make sure that datatypes are same otherwise it can give 
 ? unexpected results
 */
 

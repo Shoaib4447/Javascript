@@ -28,7 +28,7 @@
 * The type of a variable is determined at runtime as opposed to compile time. Variables in dynamically typed languages can hold values of any type and can change type during the execution of the program. 
 
 ? Example
-=> const score = '10' //string
+=> let score = '10' //string
 score = 10 //number
 score = true //boolean
 score = null //null
