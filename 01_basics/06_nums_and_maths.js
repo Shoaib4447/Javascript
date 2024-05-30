@@ -3,32 +3,32 @@ const score = 400
 
 // Explicitly defining a type
 const balance = new Number(599)
-// console.log(typeof balance.toString())
+console.log(typeof balance.toString())
 // console.log(typeof balance)
 
 
 // The toString() method of Number values returns a string representing this number value.
 const num = 123
-// console.log(typeof num.toString())
+console.log(typeof num.toString())
 
 
 // The toFixed() method of Number values formats this number using fixed-point notation.
 const PI = 3.14159
 // console.log(PI.toFixed(7))
-// console.log(PI.toFixed(2))
+console.log(PI.toFixed(2))
 
 
 // The toPrecision() method of Number values returns a string representing this number to the specified precision. 
 const num1 = 4123.456789
-// console.log(num1.toPrecision(4)) // returns 123.4568
+console.log(num1.toPrecision(4)) // returns 123.4568
 
 
 // The toLocaleString() method of Number values returns a string with a language-sensitive representation of this number.
 const number = 5000000
-// console.log(number.toLocaleString('en-IN')) // returns 5,000,000 //Indian Format
+console.log(number.toLocaleString('en-IN')) // returns 5,000,000 //Indian Format
 // console.log(number.toLocaleString("zh-Hans-CN-u-nu-hanidec")) //Chinese Format
 
-console.table(Number.valueOf())
+console.log(Number.valueOf())
 // EPSILON: 2.220446049250313e-16
 // MAX_SAFE_INTEGER: 9007199254740991
 // MIN_SAFE_INTEGER: -9007199254740991
@@ -103,6 +103,6 @@ console.log(Math.random()*10) // Returns a random number between 0 and 10
 console.log(Math.random()*10+1) // Returns a random number between 1 and 10
 console.log(Math.floor(Math.random()*100) + 1) // Returns a random number between 1 and 100
 
-const min = 10
-const max = 100
-console.log(Math.floor(Math.random() * (max - min + 1)) + min) //
+const min = 1
+const max = 10
+console.log(Math.floor(Math.random() * (max - min + 1)) + min) // Formula when you need a number between specific range
