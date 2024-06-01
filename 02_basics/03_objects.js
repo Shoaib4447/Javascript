@@ -51,13 +51,3 @@ console.log(person.greet2());
 
 
 
-// constructor object || singleton object
-let person2 = new Object();
-person2.name = "Jane";
-person2.age = 25;
-
-// Creating another Object using Object.create
-let person3 = Object.create(person);
-person3.name = 'Bhatti'
-person3.age = 30;
-console.log(person3); // it will inherit all properties of person object
