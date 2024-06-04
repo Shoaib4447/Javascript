@@ -84,11 +84,11 @@ console.table([title, instructor, duration, price]);
 // JSON stands for JavaScript Object Notation. It is a lightweight data interchange format that is easy to read and write. JSON is often used to exchange data between a server and a web application, or between different web applications.
 
 // Json
-{
-  "name" : 'Bhatti',
-  "courseName" : 'JS',
-  "price": 'free',
-}
+// {
+//   "name" : 'Bhatti',
+//   "courseName" : 'JS',
+//   "price": 'free',
+// }
 
 [
   {},
