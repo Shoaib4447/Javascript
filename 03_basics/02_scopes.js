@@ -39,3 +39,53 @@ console.log(a); // Good a is defined in scope of if(){} so it shouldn't come out
 console.log(c);    // Good c is defined in scope of if(){} but it is accessible outside of it which can cause problem
 
 
+
+/* 
+* **************************** SCOPE LEVEL AND MINI HOISTING IN JS *************************
+=> Closure : Nested function can access the variables of Parent function and Parent cannot 
+             access variables of child or nested function
+*/
+
+function one(){
+  const username = 'Shoaib Bhatti'
+
+  function two(){
+    const website = 'Chai or Code'
+    console.log(username); // one() is global scope for two() that why it can access one variables
+    // one() cannot access variable of two() because two() scope ended after its scope
+    
+  }
+  // console.log(website)
+  two()
+};
+
+// one()
+
+
+if (true) {
+  const username1 = 'Shoaib Bhatti'
+  if (username1 === 'Shoaib Bhatti') {
+    const website1 = ' Code or Chai'
+    console.log(username1 + website1);
+  }
+  // console.log(website1);
+}
+
+// console.log(username1);
+
+
+console.log(addOne(5))
+// Function
+function addOne(num){
+  return num + 1
+}
+
+// Expression
+
+// Hositing
+// console.log(addTwo(5)) // ReferenceError: Cannot access 'addTwo' before initialization
+const addTwo = function addTwo(num){
+  return num + 2
+}
+
+console.log(addTwo(5))
