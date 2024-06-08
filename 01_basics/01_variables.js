@@ -1,18 +1,18 @@
 // Variable , Const Declaration
 
-const accoundId = 123
+const accountId = 123
 let accountEmail = 'shoaib@gmail.com'
-var accoundPassword = 'something123'
-accountCity = 'Lahore' //Variable Can be decalred but not good practice
-let accoundState;
+var accountPassword = 'something123'
+accountCity = 'Lahore' //Variable Can be declared but not good practice
+let accountState;
 
 // Const are the type of the variable that or not changeable let's try to change it
-// accoundId = 2  //Not Allowed
-// console.log(accoundId);
-// We will recieve an error assignment to constant variable
+// accountId = 2  //Not Allowed
+// console.log(accountId);
+// We will receive an error assignment to constant variable
 
 accountEmail = 'Email Changed'
-accoundPassword = '12123'
+accountPassword = '12123'
 accountCity = 'City Changed Lahore Islamabad'
 
 /**
@@ -21,5 +21,5 @@ accountCity = 'City Changed Lahore Islamabad'
  */
 
 // Use table() method for output if you have multiple variables
-console.table([accoundId, accoundPassword, accountEmail, accountCity,accoundState])
+console.table([accountId, accountPassword, accountEmail, accountCity,accountState])
 
