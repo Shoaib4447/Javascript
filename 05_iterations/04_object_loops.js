@@ -16,10 +16,10 @@ for (const key in myobj) {
 }
 
 // Definition for In
-// console.log("name" in myobj); // true
-// console.log("country" in myobj); // false
-// console.log(myobj.hasOwnProperty("name")); // true
-// console.log(myobj.hasOwnProperty("toString")); // false
+console.log("name" in myobj); // true
+console.log("country" in myobj); // false
+console.log(myobj.hasOwnProperty("name")); // true
+console.log(myobj.hasOwnProperty("toString")); // false
 
 /* 
 ========== Checking For in loop on array => It will work on arrays? ========= 
@@ -27,7 +27,7 @@ Yes it will work but it will gives us keys of array if we need value = array[key
 */
 const myArray = [1, 2, 3, 4, 5];
 for (const key in myArray) {
-  // console.log(`Index: ${key}, Value: ${myArray[key]}`);
+  console.log(`Index: ${key}, Value: ${myArray[key]}`);
 }
 
 /* 
@@ -46,8 +46,8 @@ for (const [key, value] in map) {
 
 /*
 ========== for of loop on Object =================
-
+*/
 for (const [key, value] of Object.entries(myobj)) {
   console.log(`${key} : ${value}`);
 }
-*/
+

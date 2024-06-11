@@ -1,9 +1,14 @@
 /*
 Higher Order Array specific Loops
 => for of (objects)
+
 => for in (arrays)
-=> forEach (arrays)
-=> Maps
+=> forEach (arrays) // explicitly need to return value
+=> filter (arrays)
+=> map (arrays) 
+=> reduce (arrays)
+
+=> Maps datatype
 */
 
 ["", "", "", ""][({}, {}, {}, {})];
@@ -46,7 +51,7 @@ map.set("Pk", "Pakistan");
 map.set("LR", "Lahore");
 map.set("CHBJI", "Chabuarji");
 
-/*
+
 map.clear()
 map.delete('CHBJI') 
 console.log(map.size);
@@ -57,6 +62,6 @@ console.log(map.get('LR'));
 for (const [key, value] of map) {
   console.log(`${key} : ${value}`);
 }
-*/
 
-// console.log(map);
+
+console.log(map);

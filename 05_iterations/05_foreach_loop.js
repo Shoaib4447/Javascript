@@ -11,17 +11,17 @@ numbers.forEach((number) => {
 });
 // Output: 2, 4, 6, 8, 10
 
-// function printMe(item){
-//     console.log(item);
-// }
-// numbers.forEach(printMe)
+function printMe(item){
+    console.log(item);
+}
+numbers.forEach(printMe)
 
 
 
 
 
 numbers.forEach((num, index, arr) => {
-//   console.log(`Index: ${index}, Value: ${num}, Array: ${arr}`);
+  console.log(`Index: ${index}, Value: ${num}, Array: ${arr}`);
 });
 
 // forEach on array of objects
@@ -33,7 +33,7 @@ let students = [
 ];
 
 students.forEach((student)=>{
-    // console.log(student);
+    console.log(student);
     console.log(`Name: ${student.name}, Age: ${student.age}`)
 })
 
