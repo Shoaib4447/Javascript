@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg_black {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body class="bg_black">
+    <div class="wrapper">
+        <h1 id="heading">1 Learning DOM On Chai or Code <span style="display: none"> I am hidden </span></h1>
+        <h5>DOM DIAGRAM</h5>
+        <a alt="DOM DIAGRAM" target=”_blank”
+            href="https://excalidraw.com/#json=ekcZ9zksmyb0JDqHcVuat,ICf0aJq6N_GMwwZfCfd9Ew">
+            <p>Click Here to view DOM diagram</p>
+        </a>
+        <p id="para">This is a paragraph of text.</p>
+        <p id="para">This is a paragraph of text.</p>
+        <p id="para">This is a paragraph of text.</p>
+        <input type="password" name="" id="">
+
+
+        <ul>
+            <li class="list-item"> one </li>
+            <li class="list-item"> Two </li>
+            <li class="list-item"> Three </li>
+            <li class="list-item"> Four </li>
+        </ul>
+    </div>
+    <script>
+        // Understanding the DOM Manipulation and commenting for more understanding
+
+        /*
+        
+        => All selectors
+        => document.getElementById() : selects the element with the specified id
+        => document.getElementsByClassName() : selects all elements with the specified class
+        => document.querySelector() : selects the first element that matches the specified selector in document
+        => document.querySelectorAll() : selects all elements that matches the specified selector in document
+        => document.getElementsByTagName() : selects all elements with the specified tag name
+
+        */
+
+        // console.log(document); // This will print the entire DOM structure
+        // console.log(document.head); // This will print the head tag
+        // console.log(document.body); // This will print the body tag
+
+        // ---------------------------------- id, className, class getAttribute ------------------------------
+        // Getting Element by [id]
+        document.getElementById('heading')
+        // <h1 id="heading" class="testing 2 heading" style="background-color: green;…x; border-radius: 15px;">
+        document.getElementById('heading').id
+        // "heading"
+        document.getElementById('heading').className
+        // "test"
+        document.getElementById('heading').setAttribute('class', "testing 2")
+        // undefined => Overwrite previous class
+        document.getElementById('heading').getAttribute('class')
+        // "testing 2"
+        document.getElementById('heading').setAttribute('class', "testing 2 heading")
+        // undefined => Overwrite previous class
+        document.getElementById('heading').getAttribute('class')
+        // "testing 2 heading "  => added new class not overwritten previous one
+
+
+        // Storing element in [variable] and [Styling]
+        const title = document.getElementById('heading')
+        // undefined
+        // <h1 id="heading" class="testing 2 heading" style="background-color: green;">
+        title.style.backgroundColor = 'green'
+        // "green"
+        title
+        title.style.padding = '15px'
+        // Padding of "15px"
+        title.style.borderRadius = '15px'
+        // borderRadius of "15px" 
+
+
+
+        // Accessing [content] in the element
+        title.innerText
+        // "Learning DOM On Chai or Code" => Visible content
+        title.textContent
+        // "Learning DOM On Chai or Code  I am hidden " => Also include not visible content
+        title.innerHTML
+        // 'Learning DOM On Chai or Code <span style="display: none"> I am hidden </span>'  => Include inner html in element
+
+        // ------------------------------------- querySelector() --------------------------------------------
+
+        // It uses same syntax like css
+        document.querySelector('h1')
+        document.querySelector('#heading')
+        document.querySelector('.heading')
+        // <h1 id="heading" class="testing 2 heading" style="background-color: green;…x; border-radius: 15px;">
+        document.querySelector('input[type="password"]')
+        // <input id="" type="password" name="">
+
+        // Nested Queries
+        const unOrdedList = document.querySelector('ul')
+        unOrdedList
+        // <ul>
+
+        const turnItemGreen = unOrdedList.querySelector('li')
+        turnItemGreen
+        // <li> => first Item
+        turnItemGreen.style.backgroundColor = 'green'
+        turnItemGreen.innerText = 'Inner Text Manipulated now its (five) instead of one'
+
+
+
+
+        // ---------------------------- querySelectorAll() return NodeList -------------------------------------
+
+        const tempLiList = document.querySelectorAll('li') // selecting all list items
+        tempLiList
+        // NodeList(3) [ li, li, li ]
+
+        // Styling first element of the NodeList
+        tempLiList[0].style.backgroundColor = 'red'
+
+        tempLiList.forEach((item) => {
+            item.style.backgroundColor = 'green'
+        }) // applying styles to all list items
+
+
+        // --------------------------- getElementByClassName() return HTML Collection --------------------------
+        const allItems = document.getElementsByClassName('list-item')
+        allItems
+        // HTMLCollection { 0: li.list-item, 1: li.list-item, 2: li.list-item, 3: li.list-item, length: 4 }
+
+        // => Converting into array to loop over HTML Collection
+        const convertedArray = Array.from(allItems)
+        convertedArray.forEach((item) => {
+            item.style.color = 'black'
+        }) // applying styles to all list items
+
+        // => using map()
+        Array.from(allItems).map((item) => {
+            item.style.color = 'blue'
+        }) // applying styles to all list items
+
+    </script>
+</body>
+
+</html>
