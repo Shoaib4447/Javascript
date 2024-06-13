@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM OR Chai</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+</body>
+<script>
+    // DOM
+    const div = document.createElement('div');
+    console.log(div);
+    // default attributes
+    div.className = 'div'
+    div.id = Math.round(Math.random() * 10 + 1)
+    // Custom attributes
+    div.setAttribute('title', 'div tittle')
+    // styling div
+    // div.style.background = 'linear-gradient(to bottom, #f00, #ff0)'
+    // div.style.width = '200px'
+    // div.style.height = '200px'
+    // div.style.borderRadius = '50%'
+    // div.style.display = 'flex'
+    // div.style.justifyContent = 'center'
+    // div.style.alignItems = 'center'
+    // div.style.color = 'white'
+    // div.style.fontSize = '24px'
+    // const addText = document.createTextNode('Hello World')
+    // div.appendChild(addText)
+    document.body.appendChild(div)
+
+    // Make array of color and give it to different child element of the div
+    // const colors = ['red', 'green', 'blue', 'yellow', 'orange']
+    // const childDiv = []
+    // // Make createNewDiv function and create div with child and some text in them and then style them with these colors array
+    // function createNewDiv() {
+    //     for (let i = 0; i < 5; i++) {
+    //         const newDiv = document.createElement('div');
+    //         newDiv.style.width = '200px'
+    //         newDiv.style.height = '200px'
+    //         newDiv.style.background = colors[i]
+    //         newDiv.style.borderRadius = '50%'
+    //         newDiv.style.display = 'inline-block'
+    //         newDiv.style.margin = '10px'
+    //         const text = document.createTextNode(`Color ${i + 1}`)
+    //         newDiv.appendChild(text)
+    //         childDiv.push(newDiv)
+    //     }
+    // }
+    // createNewDiv()
+    // // Add childDiv to the main div
+    // for (let i = 0; i < childDiv.length; i++) {
+    //     div.appendChild(childDiv[i])
+    // }
+
+
+
+
+
+
+
+    const myColors = ['red','blue','green','purple','yellow','lightblue','lightgreen','orange','black','brown']
+    for (let i = 0; i < 10; i++) {
+        console.log(i);
+        const newDiv = document.createElement('div');
+        newDiv.style.backgroundColor = myColors[i]
+        newDiv.style.width = '200px'
+        newDiv.style.height = '200px'
+        newDiv.style.borderRadius = '50%'
+        newDiv.style.display = 'inline-block'
+        newDiv.style.margin = '10px'
+        const text = document.createTextNode(`color ${myColors[i]}`)
+        newDiv.style.textAlign = 'center'
+        newDiv.style.lineHeight = '200px'
+        newDiv.appendChild(text)
+        document.body.appendChild(newDiv)
+    }
+</script>
+
+</html>

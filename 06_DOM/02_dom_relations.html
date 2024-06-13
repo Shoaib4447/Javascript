@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Relation</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <!-- This div element is the parent container for the day elements -->
+    <div class="parent">
+        <!-- These div elements represent individual days of the week -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+<script>
+    // Select the parent element using the class 'parent'
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    
+    // Get all child elements of the parent element
+    console.log(parent.children);
+    
+    // Access the innerHTML of the second child element (Tuesday)
+    console.log(parent.children[1].innerHTML);
+
+    // Loop through each child element and log its innerHTML and change color to green
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        // Set the text color of each child element to green
+        parent.children[i].style.color = 'green';
+    }
+
+    // Get all child elements of the parent element and store them in a variable
+    const allChilds = parent.children;
+    console.log(allChilds);
+
+    // Loop through each child element and log its innerHTML
+    for (let child of allChilds) {
+        console.log(child.innerHTML);
+        // Set the text color of each child element to green
+        child.style.color = 'green';
+    }
+
+    // Set the text color of the second child element (Tuesday) to green
+    parent.children[1].style.color ='green';
+
+    // Get the first child element (Monday)
+    console.log(parent.firstElementChild);
+
+    // Get the last child element (Thursday)
+    console.log(parent.lastElementChild);
+
+    // Select the first element with the class 'day'
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+    console.log(dayOne.previousElementSibling);
+
+    console.log("Nodes : ", parent.childNodes);
+</script>
+</html>
