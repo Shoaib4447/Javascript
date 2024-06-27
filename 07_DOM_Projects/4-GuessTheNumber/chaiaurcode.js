@@ -5,7 +5,7 @@ let randomNumber = parseInt(Math.random() * 100 + 1);
 const userInput = document.querySelector("#guessField");
 const submit = document.querySelector("#subt");
 const guessSlot = document.querySelector(".guesses");
-const lastResult = document.querySelector(".lastResult");
+const remainingAttempts = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
 const startOver = document.querySelector(".resultParas");
 
@@ -65,7 +65,7 @@ function cleanUpGuess(guess) {
   userInput.value = "";
   guessSlot.innerHTML += `${guess},`;
   numGuess++;
-  lastResult.innerHTML = `${totalGuess - numGuess}`;
+  remainingAttempts.innerHTML = `${totalGuess - numGuess}`;
 }
 
 // Display Message
@@ -92,7 +92,7 @@ function newGame() {
     prevGuess = []
     numGuess = 1
     guessSlot.innerHTML = ` `
-    lastResult.innerHTML = `${totalGuess - numGuess}`;
+    remainingAttempts.innerHTML = `${totalGuess - numGuess}`;
     lowOrHi.innerHTML = ``
     userInput.removeAttribute("disabled");
     startOver.removeChild(p)

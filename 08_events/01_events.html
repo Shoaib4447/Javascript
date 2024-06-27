@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // ------------------------------------- Event Objects ---------------------------------
+
+    /*
+       => type , timeStamp , defaultPrevented
+       => target , toElement , srcElement , currentTarget
+       => clientX , clientY , offsetX , offsetY , screenX , screenY
+       => ctrlKey , shiftKey , altKey , keyCode
+       => button , metaKey , charCode , which , char , key 
+       => Mouse Events
+   
+       => Keyboard Events
+       => Form Events
+       => UI Events
+       => Focus Events
+       => Drag and Drop Events
+       => Mutation Events
+       => Animation Events
+       => Media Events
+   
+   
+       ------------------------------- Keyboard Events -----------------------------------------
+       => keydown , keyup , keypress
+   
+       keydown : when a key is pressed down
+       keyup : when a key is released
+       keypress : when a key is pressed down and released
+   
+       ------------------------------- Form Events -----------------------------------------
+       => submit , reset , change , input , select
+   
+       submit : when a form is submitted
+       reset : when a form is reset
+       change : when a form element is changed
+       input : when a form element is changed
+       select : when a form element is selected
+   
+       ------------------------------- UI Events -----------------------------------------
+       => mouseover , mouseout , mouseenter , mouseleave , mousemove , mouseup ,
+       => mousedown , click , dblclick , contextmenu , mousewheel , DOMMouseScroll ,
+       => wheel , select , change , input , submit , reset , focus , blur , load ,
+       => unload , resize , scroll , abort , error , select , change , input , submit ,
+       => reset , focus , blur , load , unload , resize , scroll , abort , error ,
+   
+       ------------------------------- Focus Events -----------------------------------------
+       => focus , blur
+       focus : when a form element is focused
+       blur : when a form element is blurred
+   
+       ------------------------------- Drag and Drop Events -----------------------------------------
+       => drag , dragstart , dragend , dragenter , dragleave , dragover , drag
+       drop , draggesture , dragdrop
+   
+       ------------------------------- Mutation Events -----------------------------------------
+       
+       => DOMSubtreeModified , DOMNodeInserted , DOMNodeRemoved , DOMNodeInsertedIntoDocument
+       => DOMNodeRemovedFromDocument , DOMAttrModified , DOMCharacterDataModified , DOMElementName
+       => DOMAttributeNameChanged , DOMAttrRemoved , DOMAttrChanged , DOMFocusIn , DOMFocus
+       => Out , DOMActivate , DOMContentLoaded , DOMContentLoaded , DOMMouseScroll , DOMMouseScroll
+   
+       ------------------------------- Animation Events ----------------------------------------
+       => animationstart , animationend , animationiteration
+   
+       ------------------------------- Media Events -----------------------------------------
+       => play , pause , timeupdate , ended , waiting , seeking , seeking , seeking ,
+   
+   
+   
+       =>Event Bubbling 
+       =>Event Delegation
+       =>Event Propagation
+       =>Event Capturing
+       => Event Target 
+   
+       // ----------------------------------- Event Propagation -----------------------------------
+       1. Bubbling Phase : false
+       2. Capturing Phase : true
+       3. Target Phase 
+
+       stopPropagation(): is used to stop the event from bubbling up the DOM tree, preventing any  
+                          parent handlers from being notified of the event.
+
+       stopImmediatePropagation(): is used to stop the event from bubbling up the DOM tree, preventing 
+                          any parent handlers from prevent other listeners from being called.
+
+       preventDefault(): is used to prevent the default behavior of the event 
+                        (e.g. the default action of a form submission).
+
+
+       
+       ----------------------------------- Event Capturing -----------------------------------
+        1. Event Capturing :  is the process of traversing the DOM tree from the root to the target 
+            element in the order of the HTML markup. The event is captured by the parent element and then passed to the child element.
+        
+       // ----------------------------------- Event Bubbling -----------------------------------
+       1. Event Bubbling is the process of traversing the DOM tree from the target element to the root
+            in the reverse order of the HTML markup. The event is captured by the target element and then passed to the parent element
+
+       // ----------------------------------- Event Delegation -----------------------------------
+       1. Event Delegation is the process of attaching an event listener to a parent element and 
+           handling the event for all its child elements.
+
+       2. Event Delegation is used to handle events for elements that are dynamically added to
+           the DOM tree after the page has loaded.
+
+    
+       // ----------------------------------- Event Target -----------------------------------
+       1. Event Target is the element that triggered the event. It is the element that the event is
+           attached to.
+
+   
+   */
+
+    // ----------------------------------- onclick() -------------------------------------------
+
+    /*
+    document.getElementById('river').onclick = () => {
+        alert("You clicked on the river image");
+    }
+    //
+    document.getElementById('owl').onmouseover = () => {
+        alert("You hovered over the owl image");
+    }
+    // 
+    document.getElementById('prayer').onmouseout = () => {
+        alert("You moved out of the prayer image");
+    }
+    */
+
+    // Better Approach ------------------- addEventListener ---------------------------------- 
+
+    const images = document.getElementById('images')
+    const owl = document.getElementById('owl');
+    const river = document.getElementById('river');
+    const prayer = document.getElementById('prayer');
+    const google = document.getElementById('google')
+
+    /*
+        // Event Bubbling: false : default = traverse DOM from child to parent
+        images.addEventListener('click', (e) => {
+            console.log("You clicked on the ul ");
+        }, false);
+        // Event Capturing: true = traverse DOM from parent to child
+        owl.addEventListener('click', (e) => {
+            console.log("You clicked on the owl image");
+            e.stopPropagation()
+        }, true);
+    
+        // preventDefault
+        google.addEventListener('click', (e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            console.log("You clicked on the google image");
+        });
+    */
+    // Remove Clicked li from ul
+    images.addEventListener('click', function (e) {
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIT = e.target.parentNode
+            removeIT.remove()
+        }
+
+        // img = parent > li = parent > ul 
+        // if img click li will be removed 
+        // if li clicked ul will be removed 
+
+
+        // console.log(e.target.parentNode);
+        // let removeIT = e.target.parentNode
+        // removeIT.remove()
+        
+    })
+
+
+    prayer.addEventListener('click', (event) => {
+        // console.log("element that triggered the event : ", event.target); // returns the element that triggered the event
+        // console.log("type of event : ", event.type); // returns the type of event
+        // console.log("x-coordinate : ", event.clientX); // returns the x-coordinate of the mouse pointer
+        // console.log("y-coordinate: ", event.clientY); // returns the y-coordinate of the mouse pointer
+        // console.log("TimeStamp when user clicked :", event.timeStamp.toLocaleString());
+    });
+
+</script>
+
+</html>
