@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API setTimeOut</title>
+</head>
+
+<body style="background-color: #414141; color: white;">
+    <h1>Web API setTimeOut</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    const start = document.getElementById('start');
+    const stop = document.getElementById('stop');
+    // let timer = null;
+    // start.addEventListener('click', () => {
+    //     timer = setInterval(() => {
+    //         console.log('Hello World', Date.now());
+    //     }, 1000);
+    // });
+    // stop.addEventListener('click', () => {
+    //     clearInterval(timer);
+    // });
+
+    // const stopDate = setInterval(sayDate,2000,'hi')
+    // clearInterval(stopDate)
+
+
+    // Assignment Question
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+    let starter = null;
+    start.addEventListener('click',function(){
+        starter = setInterval(sayDate,2000,'Hello Start')
+    })
+    stop.addEventListener('click',function(){
+        clearInterval(starter)
+    })
+
+    
+</script>
+
+</html>

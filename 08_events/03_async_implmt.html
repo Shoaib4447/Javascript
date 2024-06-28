@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Implementation</title>
+</head>
+
+<body style="background-color: #414141; color: white;">
+    <h1>Chai or Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Web API and Async
+    // Web API is a set of functions and classes that are available to JavaScript code running in a
+    // browser. These functions and classes are provided by the browser and allow JavaScript code to
+    // interact with the browser and the web page. For example, the window.alert() function is
+    // provided by the browser and allows JavaScript code to display an alert box to the user.
+
+    // Async is a keyword in JavaScript that is used to indicate that a function should be executed
+    // asynchronously. This means that the function will be executed in the background, without
+    // blocking the main thread of the JavaScript engine. Async functions are useful for
+    // performing long-running tasks, such as making an HTTP request, without blocking the user
+    // interface of the web page.
+
+    // Async Implementation
+    // In this exercise, you will implement a function that uses the Web API to make an HTTP
+    // request to a server and then displays the result in an alert box. The function should be
+    // implemented using the async keyword. You will also implement a button that can be used to
+    // stop the function from running.
+
+    /*
+        ----------------------------------------setTimeout---------------------------------
+        setTimeout is a function that is provided by the browser and allows JavaScript code to
+        execute a function after a specified amount of time has passed. The setTimeout function
+        takes two arguments: a function to be executed and a delay in milliseconds. The function
+        will be executed after the specified delay has passed.
+        For example, the following code will execute the function alert() after 2 seconds have
+        passed:
+        
+        setTimeout(() => {
+            console.log('Hello World!');
+        }, 1000);
+    */
+
+    const sayHi = function () {
+        console.log('Hello World!');
+    }
+    const hello = setTimeout(sayHi, 2000)
+
+    const button = document.querySelector('#stop');
+    button.addEventListener('click', () => {
+        clearTimeout(hello)
+        console.log('STOPPED HELLO EVENT');
+    })
+    
+
+    const changeTitle = function () {
+        // document.title = 'Chai or Code'
+        const title = document.querySelector('h1')
+        title.textContent = 'Hello World!'
+    }
+    const title = setTimeout(changeTitle, 2000)
+    button.addEventListener('click',function(){
+        clearTimeout(title)
+        console.log('STOPPED TITLE EVENT');
+    })
+
+
+</script>
+
+</html>
