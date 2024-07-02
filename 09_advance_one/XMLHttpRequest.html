@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+
+<body style='background-color:#414141; padding: 20px;'>
+    <h1 style='color:#fff'>XMLHttpRequest</h1>
+    <p style='color:#fff'>XMLHttpRequest is a JavaScript API that allows you to make
+        asynchronous HTTP requests to a server. This means that you can make a request to a server and
+        continue to use your program while the server is processing the request. This is useful for
+        applications that need to make requests to a server, such as a web application that needs to
+        fetch data from a database.</p>
+    <div id="card">
+
+    </div>
+</body>
+
+<script>
+
+    // Get body
+    const body = document.querySelector('body');
+    const card = document.querySelector("#card");
+    card.style.backgroundColor = 'red';
+    card.style.color = 'white';
+    card.style.padding = '20px';
+    card.style.margin = '20px';
+    card.style.borderRadius = '10px';
+    card.style.border = '1px solid #000';
+    card.style.textAlign = 'center';
+    card.style.fontSize = '20px';
+    card.style.fontFamily = 'Arial';
+    card.style.fontWeight = 'bold';
+    card.style.display = 'flex';
+    card.style.justifyContent = 'center';
+    card.style.alignItems = 'center';
+    card.style.flexDirection = 'column';
+    card.style.width = '300px';
+    
+    const requestURL = 'https://api.github.com/users/shoaib4447'
+    // Creates a new XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            const response = JSON.parse(this.responseText)
+            console.log(response);
+            card.innerHTML = `<img src="${response.avatar_url}" alt="avatar" class="avatar">`
+            // Style avatar
+            const avatar = document.querySelector(".avatar");
+            avatar.style.width = '300px';
+            avatar.style.height = '300px';
+            card.innerHTML += `<p>Followers : ${response.followers}</p>`
+            card.innerHTML += `<p>${response.company}</p>`
+            body.appendChild(card);
+        }
+    }
+    xhr.send()
+</script>
+
+</html>
