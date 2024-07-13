@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body>
+    <button id="Orange">Orange</button>
+    <button id="Green">Green</button>
+  </body>
+  <script>
+    // Lexical Scope
+
+    // function init() {
+    //   let name = "Mozilla Firefox"; // name is a local variable created by init
+    //   function displayName() {
+    //     // displayName() is the inner function, that forms the closure
+    //     console.log(name); // use variable declared in the parent function
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+    // function outer() {
+    //   let username = "I am local variable of outer functions";
+    //   function inner() {
+    //     let secret = 'Secret of inner functions'
+    //     console.log('Available in inner function scope: ',username);
+    //   }
+    //   inner();
+    //   function inner2() {
+    //     console.log('Available in inner2 function scope: ',username);
+    //     // console.log('Secret not avaiable in sibling functional scope: ',secret);
+    //   }
+    //   inner2();
+    // }
+    // outer()
+    // console.log('username is function scope : ',username);
+    // console.log('Secret is functions scope',secret);
+
+    // Closure
+    // function makeFunc() {
+    //   var name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   return displayName;
+    // }
+    // var myFunc = makeFunc();
+    // myFunc();
+    // console.log(myFunc);
+    // console.log(makeFunc());
+    // console.log(makeFunc() === myFunc);
+  </script>
+  <script>
+    // const orange = document.querySelector('#Orange');
+    // const green = document.querySelector('#Green');
+    // orange.addEventListener('click',function(){
+    //     document.body.style.backgroundColor = 'orange';
+    // })
+    // green.addEventListener('click',function(){
+    //     document.body.style.backgroundColor = 'green';
+    // })
+
+    function clickHandler(color) {
+          return function () {
+            document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    document.querySelector("#Orange").onclick = clickHandler("orange");
+    document.querySelector("#Green").onclick = clickHandler("green");
+  </script>
+</html>
